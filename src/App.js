@@ -1,9 +1,10 @@
 import "./App.css";
 import styled from "styled-components";
 import { useSelector, useDispatch } from "react-redux";
-import { incNumer, decrNumber } from "./action";
+import { incNumer, decrNumber, multiplyNum, divideNum } from "./action";
 function App() {
   const myState = useSelector((state) => state.changeTheNumber);
+  const mulstate = useSelector((state) => state.mulTheNumber);
   const dispatch = useDispatch();
   return (
     <div className="App">
@@ -20,6 +21,25 @@ function App() {
             -
           </button>
         </MainDiv>
+      </div>
+      <div>
+        <div>
+          <h2>Multiplication Divison using react redux</h2>
+          <MainDiv>
+            <button
+              onClick={() => dispatch(multiplyNum(5))}
+              className="incr-dcr"
+            >
+              *
+            </button>
+            <div>
+              <span className="state-class">{mulstate}</span>
+            </div>
+            <button onClick={() => dispatch(divideNum(5))} className="incr-dcr">
+              /
+            </button>
+          </MainDiv>
+        </div>
       </div>
     </div>
   );

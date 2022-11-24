@@ -6,6 +6,7 @@ const changeTheNumber = (state = initialState, action) => {
       return state + action.payload;
     case "DECREMENT":
       return state - action.payload;
+
     default:
       return state;
   }

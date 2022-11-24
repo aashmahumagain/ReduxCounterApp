@@ -10,3 +10,15 @@ export const decrNumber = (num) => {
     payload: num,
   };
 };
+export const multiplyNum = (num) => {
+  return {
+    type: "MULTIPLY",
+    payload: num,
+  };
+};
+export const divideNum = (num) => {
+  return {
+    type: "DIVIDE",
+    payload: num,
+  };
+};
